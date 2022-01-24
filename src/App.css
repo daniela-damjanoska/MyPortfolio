@@ -301,10 +301,7 @@ img {
 }
 
 @media (max-width: 768px) {
-    .Home .img-box {
-        padding-top: 160px;
-    }
-
+    .Home .img-box,
     .Home .cont-box {
         padding-top: 160px;
     }
@@ -321,6 +318,14 @@ img {
 @media (max-width: 600px) {
     html {
         font-size: 14px;
+    }
+
+    .Home .img-box {
+        padding-top: 130px;
+    }
+
+    .Home .cont-box {
+        padding-top: 120px;
     }
 
     .Home .cont-box h2 {
