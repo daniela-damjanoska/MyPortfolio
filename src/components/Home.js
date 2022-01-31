@@ -1,12 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import DownloadResume from './DownloadResume';
+import Header from './Header';
 
 export default function Home() {
     const navigate = useNavigate();
 
     return (
         <div className="Home">
-            <div className="Navigation">
+            <Header>
                 <p>
                     <b>
                         Want to see some of my{' '}
@@ -14,11 +16,11 @@ export default function Home() {
                             onClick={() => navigate('/projects')}
                             className="text-purple"
                         >
-                            Projects
+                            Projects and Challenges?
                         </span>{' '}
                     </b>
                 </p>
-            </div>
+            </Header>
             <div className="overall-cont-wrapper">
                 <div className="img-box">
                     <img src="/img/profile.jpg" alt="" />
@@ -48,20 +50,11 @@ export default function Home() {
                     </p>
                 </div>
             </div>
-            <div className="Navigation bottom">
-                <a href="mailto:daniela_damjanoska@yahoo.com" target="_blank">
-                    <i className="far fa-envelope"></i>
-                </a>
-                <a
-                    href="https://www.linkedin.com/in/daniela-damjanoska-b1165120a/"
-                    target="_blank"
-                >
-                    <i className="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/daniela-damjanoska" target="_blank">
-                    <i className="fab fa-github"></i>
-                </a>
-            </div>
+            <p className="resume">
+                <b>
+                    To find out more click on <DownloadResume />
+                </b>
+            </p>
         </div>
     );
 }

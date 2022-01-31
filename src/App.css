@@ -21,7 +21,7 @@ img {
 .Home {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url('../public/img/banner.jpg') no-repeat center / cover;
-    height: 100vh;
+    height: calc(100vh - 61.5px);
 }
 
 .Home .overall-cont-wrapper {
@@ -40,7 +40,7 @@ img {
     animation-fill-mode: forwards;
     color: #ffffff;
     padding-left: 80px;
-    margin-top: -100px;
+    margin-top: -70px;
 }
 
 .Home .cont-box h2 {
@@ -69,7 +69,7 @@ img {
     align-items: center;
     text-align: center;
     font-weight: bold;
-    color: white;
+    color: #ffffff;
     flex: 0 1 50%;
 }
 
@@ -89,132 +89,147 @@ img {
     margin-bottom: 0;
 }
 
-.Navigation {
+.Home .resume {
     position: absolute;
-    background-color: #000000;
-    padding: 20px;
-    text-align: center;
-    left: 0;
-    right: 0;
-    z-index: 2;
+    bottom: 70px;
+    right: 50px;
     color: #ffffff;
 }
 
-.Navigation.bottom {
-    bottom: 0;
+.Home .resume button {
+    border: 2px solid #b409b4;
+    background-color: transparent;
+    border-radius: 4px;
+    color: #b409b4;
+    padding: 8px 20px;
+    margin-left: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease-in;
 }
 
-.Navigation p {
+.Home .resume button:hover {
+    background-color: #b409b4;
+    color: #ffffff;
+}
+
+.Header,
+.Footer {
+    background-color: #000000;
+    padding: 20px 50px;
+    color: #ffffff;
+}
+
+.Header p {
+    text-align: center;
     margin-bottom: 0;
 }
 
-.Navigation p span {
+.Header span,
+.Header p.right {
     cursor: pointer;
 }
 
-.Navigation p span:hover {
+.Header p.right {
+    text-align: right;
+}
+
+.Header p span:hover,
+.Header p.right:hover {
     text-decoration: underline;
 }
 
-.Navigation a {
+.Footer {
+    bottom: 0;
+    text-align: center;
+}
+
+.Footer a {
     display: inline-block;
     padding: 0 10px;
     color: #ffffff;
     transition: 0.3s ease-in;
 }
 
-.Navigation a i {
+.Footer a i {
     font-size: 20px;
 }
 
-.Navigation a:hover {
+.Footer a:hover {
     transform: scale(1.3);
 }
 
 .ProjectList {
-    background: linear-gradient(
-        to top left,
-        rgb(32, 29, 29),
-        rgb(110, 103, 103)
-    );
+    background: linear-gradient(to top left, rgb(20, 16, 16), rgb(37, 34, 34));
     min-height: 100vh;
     color: #ffffff;
-    padding-top: 70px;
-    padding-bottom: 30px;
-}
-
-.ProjectList button {
-    position: absolute;
-    right: 30px;
-    top: 30px;
-    border: none;
-    border-radius: 4px;
-    background-color: #b409b4;
-    color: #ffffff;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: backgroundColor -3s ease-in;
-}
-
-.ProjectList button:hover {
-    background-color: #dd36dd;
-}
-
-.ProjectList h1 {
-    text-align: center;
-    padding-bottom: 35px;
+    padding-bottom: 20px;
 }
 
 .ProjectList .ProjectList-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    width: 80%;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 90px;
 }
 
 .ProjectCard {
-    flex: 0 1 50%;
-    overflow: hidden;
     position: relative;
-    margin-bottom: 40px;
-    display: block;
+    min-height: 450px;
+    text-align: right;
+    margin-bottom: 90px;
+    background-color: #131212;
+}
+
+.ProjectCard * {
+    transition: all 0.3s ease-in;
 }
 
 .ProjectCard img {
-    transform: scale(1);
-    transition: all 0.5s ease-in-out;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    opacity: 1;
+    width: 100%;
+    transform: translateY(-50%);
+}
+.ProjectCard figcaption {
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    padding: 15px 0 15px 15px;
+}
+
+.ProjectCard h2 {
+    margin-bottom: 5px;
+}
+
+.ProjectCard h2,
+.ProjectCard small {
+    opacity: 0;
+}
+
+.ProjectCard small:last-child {
+    display: block;
+}
+
+.ProjectCard a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
 }
 
 .ProjectCard:hover img {
-    transform: scale(1.05) translateX(-8px);
+    width: 55%;
+    right: -8%;
 }
 
-.ProjectCard-inner {
-    padding: 0 20px;
-}
-
-.ProjectCard-inner p {
-    color: #ffffff;
-    height: 100%;
-    margin-bottom: 0;
-    padding-top: 125px;
-    text-transform: uppercase;
-    font-size: 30px;
-    text-align: center;
-}
-
-.hoverDesign {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.4);
-    opacity: 0;
-    transition: all 0.3s ease-out 0.2s;
-}
-
-.hoverDesign:hover {
+.ProjectCard:hover figcaption h2,
+.ProjectCard:hover figcaption small {
     opacity: 1;
 }
 
@@ -223,12 +238,8 @@ img {
 }
 
 @media (max-width: 1440px) {
-    .hoverDesign {
-        right: 15.5px;
-    }
-
-    .ProjectCard-inner p {
-        padding-top: 70px;
+    .ProjectCard {
+        min-height: 300px;
     }
 }
 
@@ -239,7 +250,7 @@ img {
     }
 
     .Home .img-box {
-        padding-top: 200px;
+        padding-top: 140px;
         width: 80%;
     }
 
@@ -258,27 +269,40 @@ img {
     }
 
     .ProjectCard {
-        flex-basis: 100%;
         margin-bottom: 50px;
+        min-height: 250px;
     }
 
-    .ProjectCard-inner p {
-        padding-top: 120px;
-    }
-
-    .hoverDesign {
-        right: 10.5px;
+    .ProjectCard:hover figcaption h2,
+    .ProjectCard:hover figcaption small {
+        opacity: 0;
     }
 }
 
 @media (max-width: 1024px) and (orientation: landscape) {
     .Home .img-box {
-        padding-top: 90px;
+        padding-top: 50px;
         width: 60%;
     }
 
     .Home .cont-box {
-        padding-top: 160px;
+        padding-top: 130px;
+    }
+
+    .Home .resume {
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    .ProjectList .ProjectList-wrapper {
+        margin-top: 60px;
+    }
+
+    .ProjectCard:hover figcaption h2,
+    .ProjectCard:hover figcaption small {
+        opacity: 0;
     }
 }
 
@@ -295,23 +319,28 @@ img {
         padding-top: 210px;
     }
 
-    .Navigation.Navigation.bottom {
+    .Home .resume,
+    .Footer {
         bottom: auto;
+    }
+
+    .Home .resume {
+        width: 100%;
+        margin-top: -45px;
     }
 }
 
 @media (max-width: 768px) {
-    .Home .img-box,
+    .Home .img-box {
+        padding-top: 80px;
+    }
+
     .Home .cont-box {
-        padding-top: 160px;
+        padding-top: 150px;
     }
 
-    .ProjectCard-inner p {
-        padding-top: 100px;
-    }
-
-    .hoverDesign {
-        right: 13px;
+    .ProjectList .ProjectList-wrapper {
+        width: 85%;
     }
 }
 
@@ -341,55 +370,35 @@ img {
         font-size: 20px;
     }
 
+    .Home .resume button {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
     .ProjectList .ProjectList-wrapper {
         width: 95%;
     }
 
-    .ProjectList h1 {
-        padding-bottom: 25px;
-    }
-
-    .ProjectList button {
-        right: 20px;
-        top: 20px;
-    }
-
     .ProjectCard {
         margin-bottom: 30px;
-    }
-
-    .ProjectCard-inner p {
-        padding-top: 75px;
-    }
-
-    .hoverDesign {
-        right: 15.5px;
+        min-height: 130px;
     }
 }
 
 @media (max-width: 425px) {
     .Home .img-box {
-        padding-top: 130px;
+        padding-top: 40px;
     }
 
     .Home .cont-box {
-        padding-top: 80px;
+        padding-top: 0;
     }
 
-    .ProjectList h1 {
-        padding-bottom: 15px;
-        font-size: 27px;
+    .Home .resume {
+        bottom: 30px;
     }
 
-    .ProjectList button {
-        padding: 8px 15px;
-    }
-
-    .ProjectCard-inner p {
-        padding-top: 55px;
-    }
-
-    .hoverDesign {
-        right: 21px;
+    .ProjectList .ProjectList-wrapper {
+        margin-top: 40px;
     }
 }

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import ProjectsList from './components/ProjectsList';
 import ScrollToTop from './components/ScrollToTop';
+import Footer from './components/Footer';
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                     </Routes>
                 </ScrollToTop>
             </Router>
+            <Footer />
         </div>
     );
 }
