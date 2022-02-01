@@ -45,7 +45,7 @@ let sites = [
         id: 7,
         title: 'BIKE STORE',
         url: 'https://danieladam-bike-store.netlify.app/',
-        desc: "This challenge is a website store for bikes. The link for the bikes data is: https://json-project3.herokuapp.com/products. The cards are created dynamically with JavaScript, looping through the array of objects. On the left side, there is a sidebar containing filters that filtering the cards appropriately, and the first filter named 'Show all' should be clicked when opening the page, and showing all of the cards. When clicking on each filter, the name of the filter should become bolder and colored orange. Also the badges should be filled with the correct numbers to show the customer how many items are in the selected filter.",
+        desc: "This challenge is a website store for bikes. The link for the bikes data is: https://json-project3.herokuapp.com/products. The cards are created dynamically with JavaScript, looping through the array of objects. On the left side, there is a sidebar containing filters that filter the cards appropriately, and the first filter named 'Show all' should be clicked when opening the page, and showing all of the cards. When clicking on each filter, the name of the filter should become bolder and colored orange. Also the badges should be filled with the correct numbers to show the customer how many items are in the selected filter.",
         tech: 'HTML, Bootstrap and jQuery',
     },
 ];
