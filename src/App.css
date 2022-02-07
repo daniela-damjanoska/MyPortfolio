@@ -159,7 +159,7 @@ img {
 }
 
 .ProjectList {
-    background: linear-gradient(to top left, rgb(20, 16, 16), rgb(37, 34, 34));
+    background: linear-gradient(to top left, rgb(20, 16, 16), #220122);
     min-height: 100vh;
     color: #ffffff;
     padding-bottom: 20px;
