@@ -1,14 +1,17 @@
 import React from 'react';
 
-export default function ProjectCard({ id, url, title }) {
+export default function ProjectCard({ id, url, title, desc, tech }) {
     return (
-        <a className="ProjectCard" href={url} target="_blank">
-            <div className="ProjectCard-inner">
-                <img src={`/sites-img/site-${id}.png`} />
-                <p className="hoverDesign">
-                    <b>{title}</b>
-                </p>
-            </div>
-        </a>
+        <figure className="ProjectCard">
+            <figcaption>
+                <h2>{title}</h2>
+                <small>{desc}</small>
+                <small>
+                    <u>Technologies:</u> {tech}
+                </small>
+            </figcaption>
+            <a href={url} target="_blank"></a>
+            <img src={`/sites-img/site-${id}.png`} alt="" />
+        </figure>
     );
 }
